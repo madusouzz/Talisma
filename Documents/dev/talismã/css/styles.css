@@ -1,0 +1,291 @@
+:root {
+    --main-color:#1A234E;
+    --background:#FFFFFF;
+    --secundary:#59B1F5;
+    --secundary-text: #F0F0F0;
+    --destak: #FFD700;
+   /* --border: 0.1rem solid --secundary;*/
+    font-size: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /*text-transform: capitalize;*/
+    transition: 0.2s linear;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: var(--background);
+}
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: var(--background); /* fundo branco fixo */
+    border-bottom: 0.1rem solid rgba(255,255,255.3);  /* mantém a linha */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* sombra leve e moderna */
+}
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+}
+.navbar a{
+    font-weight: 400 ;
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+.navbar a:hover {
+    color: var(--secundary);
+    border-bottom: 0.1rem solid var(--secundary-text);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+.icons img {
+    cursor: pointer;
+}
+.icons img:hover {
+    width: 40px;
+    height: 40px;
+}
+.btn {
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+
+}
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+.home-container {
+    background: url("../img/background-1.jpeg");
+    background-size: cover;
+    background-position: center;
+    
+}
+.home-container section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 80rem;
+}
+
+.content h3 {
+    color: var(--main-color);
+    font-size: 6rem;
+}
+.content p {
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 1rem 0;
+
+}
+.title {
+    font-size: 4rem;
+    color: var(--secundary);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+.title span {
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    gap: 1.5rem;
+
+}
+
+.about .row .content {
+    padding: 2rem;
+
+
+}.about .row .content h3{
+    font-size: 3rem;
+    color: var(--main-color);
+}
+.about .row .content p{
+    font-size: 1.6rem;
+    color: var(--main-color);
+    padding: 1rem 0;
+    line-height: 1.8rem 0;
+}
+
+ .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+.menu .box-container .box {
+    text-align: center;
+    border: 0.1rem solid var(--secundary-text);
+    padding: 5rem;
+    cursor: pointer;
+}
+
+/*
+.menu .box-container .box img {
+    height: 10rem; 
+}*/
+.menu .box-container .box h3 {
+    color: var(--main-color);
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box:hover {
+    background-color: var(--secundary);
+}
+.menu .box-container .box:hover>** {
+    background-color: #ffff;
+}
+   
+.reviews .box-container .box {
+    border: 0.1rem solid var(--secundary-text);
+    text-align: center;
+    padding: 3rem 2rem;
+
+}
+.reviews .box-container .box p{
+    font-size: 1.5rem;
+    color: #1A234E;
+    padding: 2rem 0;
+    line-height: 1.8;
+    font-weight: 200;
+    
+}
+.reviews .box-container .box h3{
+    color: #59B1F5;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+.reviews .box-container .box .customer{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+.address {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footer {
+    text-align: center;
+}
+.footer .share {
+    padding: 1rem 0;
+}
+.footer .share img {
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.site-footer {
+    background-color: #1A234E;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Isso empurra o footer para a parte inferior da página */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+/* Estilos para telas grandes (desktops) */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/* --- Media Query para telas menores que 768px (tablets e smartphones) --- */
+@media (max-width: 768px) {
+    /* Ajustes para a seção principal da home */
+    .home-container {
+        /* Sobrescreve a regra 'section' para ocupar 100% da largura */
+        max-width: 100%; 
+        margin: 0; 
+        
+        background: url("../img/background_mobile.jpeg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        
+        /* Remove essa regra, ela pode causar problemas de layout em celulares */
+        /* min-width: 50vh; */
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Os estilos do conteúdo da home */
+    .home-container .content {
+        display: flex;
+        flex-direction: column; 
+        text-align: center; 
+        padding: 0 20px;
+    }
+    
+    .home-container .content img {
+        max-width: 100%; 
+        height: auto;
+    }
+    
+    .home-container .content h3 {
+        font-size: 2.5rem; 
+        margin-bottom: 0; 
+    }
+    
+    .home-container .content p {
+        font-size: 1rem;
+    }
+
+    /* Outras regras de Media Query */
+    .about .row {
+        flex-direction: column; 
+    }
+}
+
+/* --- Media Query para telas ainda menores, como smartphones na vertical --- */
+@media (max-width: 480px) {
+ 
+}
