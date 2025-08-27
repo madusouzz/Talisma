@@ -23,10 +23,18 @@
     font-family: "Poppins", sans-serif;
 }
 
-html, body {
+html,
+body {
     width: 100%;
-    overflow-x: hidden; /* previne scroll horizontal */
+    overflow-x: hidden;
+    /* previne scroll horizontal */
     background-color: var(--background);
+}
+
+/* Estilo padrão para desktop */
+.logo-mobile {
+    display: none;
+    /* Esconde a logo mobile por padrão */
 }
 
 /* ========================== */
@@ -89,6 +97,12 @@ section {
     height: 40px;
 }
 
+#menu-btn {
+    display: none;
+    /* Esconde o ícone do menu no desktop */
+    cursor: pointer;
+}
+
 /* ========================== */
 /* Botões                     */
 /* ========================== */
@@ -148,16 +162,17 @@ section {
 /* ========================== */
 /* Textos                     */
 .content h3 {
-  font-size: clamp(1.8rem, 4vw, 3rem); /* mínimo, responsivo, máximo */
-  line-height: 1.3;
-  word-wrap: break-word;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    /* mínimo, responsivo, máximo */
+    line-height: 1.3;
+    word-wrap: break-word;
 }
 
 .content p {
-  font-size: clamp(1rem, 2.5vw, 1.6rem);
-  line-height: 1.3;
-  padding: 0;
-  
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    line-height: 1.3;
+    padding: 0;
+
 }
 
 
@@ -181,7 +196,8 @@ section {
     align-items: center;
     gap: 1.5rem;
     background-color: #f9f9f9;
-    flex-wrap: wrap; /* previne overflow */
+    flex-wrap: wrap;
+    /* previne overflow */
 }
 
 .about .row .content {
@@ -288,6 +304,7 @@ section {
 .footer .share {
     padding: 1rem 0;
 }
+
 .footer .share img {
     margin: 0.3rem;
     cursor: pointer;
@@ -298,19 +315,82 @@ section {
 /* Media Queries              */
 /* ========================== */
 @media (max-width: 768px) {
+
+    .header {
+        background-color: #1A234E;
+    }
+
+    .icons img {
+        filter: brightness(0) invert(1);
+    }
+
+    #menu-btn {
+        display: inline-block;
+        /* Exibe o ícone do menu em telas menores */
+    }
+
+    .logo-desktop {
+        display: none;
+        /* Esconde a logo desktop */
+    }
+
+    .logo-mobile {
+        display: block;
+        /* Mostra a logo mobile */
+    }
+    .search {
+        display: none;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        /* Posiciona o menu abaixo do header */
+        right: -100%;
+        /* Começa fora da tela */
+        background: #1A234E;
+        width: 25rem;
+        height: calc(100vh - 100%);
+        box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+    }
+
+    .navbar.active {
+        right: 0;
+        /* Move o menu para dentro da tela */
+    }
+
+    .navbar a {
+        display: block;
+        /* Links um abaixo do outro */
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .navbar a:hover {
+        font-size: 2.1rem;
+        color: var(--secundary);
+        border: none;
+        padding-bottom: .5rem;
+    }
+
     section {
         max-width: 100%;
         padding: 3rem 1rem;
     }
 
     .header section {
-        flex-direction: column;
-        padding: 1rem;
-        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        text-align: left;
     }
 
     .icons {
-        margin-top: 1rem;
+        margin-top: 0;
     }
 
     .home-container {
@@ -371,10 +451,12 @@ section {
     .content h3 {
         font-size: 2.5rem;
     }
+
     .content p {
         font-size: 1.2rem;
         padding: 0 10px;
     }
+
     .menu .box-container .box,
     .reviews .box-container .box {
         padding: 2rem 1rem;
